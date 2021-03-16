@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from front import views
+from django.conf.urls.i18n import i18n_patterns
+from django.urls import include
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.news),
-    path('inner/<int:pk>/', views.news_inner, name='news_inner')
+
 ]
+urlpatterns+=i18n_patterns(
+        path('admin/', admin.site.urls),
+        path('', views.news, name='home'),
+        path('inner/<int:pk>/', views.news_inner, name='news_inner')
+    )

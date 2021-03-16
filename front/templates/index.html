@@ -1,3 +1,4 @@
+{% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,11 @@
     <title>Title</title>
 </head>
 <body>
+<h1>{% trans 'News' %}</h1>
 {%   for n in news %}
-<h1>
+<h4>
     <a href="{% url 'news_inner'  n.id%}">{{ n.title }}</a>
-</h1>
+</h4>
 {% endfor %}
 </body>
 </html>
