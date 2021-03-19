@@ -2,25 +2,31 @@ from django.contrib import admin
 from .models import News
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from django.utils.html import mark_safe
 
 
 class NewsAdminForm(forms.ModelForm):
     content = forms.CharField(label='Описание', widget=CKEditorUploadingWidget())
     title = forms.CharField(label="title")
-    title_ru = forms.CharField(label='title ru')
+    short_content = forms.CharField(widget=forms.Textarea(
+        attrs={'class': 'mytextarea'}
+    ))
 
     class Meta:
         model = News
-        fields = ['title', 'content', 'title_ru']
+        fields = ['title', 'short_content', 'content', 'category', 'image']
 
 
 # Register your models here.
 class NewsAdmin(admin.ModelAdmin):
     form = NewsAdminForm
-    list_display = ('title',)
+    list_display = ('title', 'short_content', 'thumb')
 
-    def save_model(self, request, obj, form, change):
-       obj.title=form.cleaned_data.get('title_ru', None)
-       super().save_model(request, obj, form, change)
+    def thumb(self, obj):
+        return mark_safe("<img width='200px' src=/uploads/" + str(obj.image) + "/>")
+
+    thumb.allow_tags = True
+    thumb.__name__ = 'Thumb'
+
 
 admin.site.register(News, NewsAdmin)
