@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django_cleanup.apps.CleanupConfig',
     'aboutus.apps.AboutusConfig',
-    'sales.apps.SalesConfig'
+    'sales.apps.SalesConfig',
+    'library.apps.LibraryConfig',
+    'partners.apps.PartnersConfig',
+    'contacts.apps.ContactsConfig',
+    'treasuremap'
 ]
 
 MIDDLEWARE = [
@@ -62,7 +66,7 @@ ROOT_URLCONF = 'newlife.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +78,17 @@ TEMPLATES = [
         },
     },
 ]
+
+TREASURE_MAP = {
+    'BACKEND': 'treasuremap.backends.yandex.YandexMapBackend',
+    'API_KEY': 'cc11b76a-ff2c-4bd0-a338-8aef4d3d65b9',
+    'SIZE': (900, 600),
+    'MAP_OPTIONS': {
+        'zoom': 5,
+        'longitude' : 69.205226,
+        'latitude' : 41.270239
+    }
+}
 
 WSGI_APPLICATION = 'newlife.wsgi.application'
 
