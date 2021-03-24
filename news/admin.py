@@ -10,6 +10,10 @@ class NewsAdminForm(forms.ModelForm):
     content_ru = forms.CharField(label='Описание[ru]', widget=CKEditorUploadingWidget())
     content_en = forms.CharField(label='Описание[en]', widget=CKEditorUploadingWidget())
 
+    short_content_uz = forms.CharField(label='Краткое Описание[uz]', widget=forms.Textarea())
+    short_content_ru = forms.CharField(label='Краткое Описание[ru]', widget=forms.Textarea())
+    short_content_en = forms.CharField(label='Краткое Описание[en]', widget=forms.Textarea())
+
     class Meta:
         model = News
         fields = '__all__'

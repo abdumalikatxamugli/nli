@@ -20,7 +20,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import include
-
+from .views import index
 
 urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls'))
@@ -28,7 +28,9 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('sales/', include('sales.urls'))
+    path('sales/', include('sales.urls')),
+    path('i18n', include('django.conf.urls.i18n')),
+    path('', index)
 )
 
 

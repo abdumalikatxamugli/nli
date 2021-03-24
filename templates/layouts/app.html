@@ -1,0 +1,202 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+
+<!-- Add landing-1 to html element -->
+<html lang="en" class="landing-1 light-style">
+<head>
+    <title>NEW LIFE INSURANCE</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'frontend/assets/images/favicon.png' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Icon fonts -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/fonts/ionicons.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/fonts/linearicons.css' %}">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/css/rtl/bootstrap.css' %}"
+          class="theme-settings-bootstrap-css">
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/css/rtl/appwork.css' %}"
+          class="theme-settings-appwork-css">
+    <!--<link rel="stylesheet" href="{% static 'frontend/assets/vendor/css/rtl/theme-corporate.css'%}" class="theme-settings-theme-css">-->
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/css/rtl/colors.css' %}"
+          class="theme-settings-colors-css">
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/css/rtl/uikit.css' %}">
+
+    <script src="{% static 'frontend/assets/vendor/js/material-ripple.js' %}"></script>
+    <script src="{% static 'frontend/assets/vendor/js/layout-helpers.js' %}"></script>
+
+    <!-- Theme settings -->
+    <!-- This file MUST be included after core stylesheets and layout-helpers.js'%} in the <head> section -->
+    <script src="{% static 'frontend/assets/vendor/js/theme-settings.js' %}"></script>
+    <script>
+        // window.themeSettings = new ThemeSettings({
+        //   cssPath: 'assets/vendor/css/rtl/'
+        //   themesPath: 'assets/vendor/css/rtl/'
+        // });
+    </script>
+
+    <!-- Core scripts -->
+    <script src="{% static 'frontend/assets/vendor/js/pace.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Page -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/landing.css' %}">
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/libs/swiper/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/vendor/libs/plyr/plyr.css' %}">
+</head>
+
+<body>
+<div class="page-loader">
+    <div class="bg-primary"></div>
+</div>
+
+<!-- Navbar -->
+<nav class="landing-navbar navbar navbar-expand-lg navbar-light fixed-top ">
+    <div class="container-fluid px-3">
+        <a href="#" class="navbar-brand text-big font-weight-bolder line-height-1 text-expanded py-3">
+            <img src="{% static 'frontend/assets/images/logo.svg' %}" alt="logo" class="logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#landing-navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="landing-navbar-collapse">
+            <div class="navbar-nav align-items-lg-center ml-auto">
+                <a href="#" class="nav-link nav-item">Главная</a>
+                <a class="anchor-link nav-item nav-link" href="#">О нас</a>
+                <div class="nav-link dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Продукты</a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item">123</a>
+                    </div>
+                </div>
+                <a class="anchor-link nav-item nav-link" href="#screenshots">Контакты</a>
+                <div class="nav-item ml-lg-4 lang-choose">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <button class="btn btn-info rounded-pill text-expanded " id="trigger-lang">
+                        <small>{{ LANGUAGE_CODE }}</small>
+                    </button>
+                    <ul id="langs">
+                        {% for language in languages %}
+                            {% if language.code != LANGUAGE_CODE %}
+                                <li onclick="change_lang('{{ language.code }}')">
+                                    {{ language.code }}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <form action="{% url 'set_language' %}" id="set_language" style="display: none" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="language">
+                    </form>
+                </div>
+                <div class="nav-item py-3 py-lg-0 ml-lg-4">
+                    <a href="#downloads"
+                       class="anchor-link btn btn-warning rounded-pill text-expanded">
+                        <small>{% trans 'KIRISH' %}</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- / Navbar -->
+
+{% block content %}
+{% endblock %}
+
+<!-- Footer -->
+<nav class="footer bg-white pt-4">
+    <div class="container  py-4">
+        <hr class="mb-4">
+        <div class="row">
+            <div class="col-6 col-sm-4 pb-4">
+                <div class="d-flex">
+                    <div class="mr-2">
+                        <img src="{% static 'frontend/assets/images/location.svg' %}" alt="">
+                    </div>
+                    <div>
+                        Адрес: Узбекистан 100060,
+                        <br> г. Ташкент пр-т А. Темура, 47
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-sm-3 pb-4">
+                <div class="d-flex mb-3">
+                    <div class="mr-2">
+                        <img src="{% static 'frontend/assets/images/mail.svg' %}" alt="">
+                    </div>
+                    <div>
+                        e-mail: info@nli.uz
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="mr-2">
+                        <img src="{% static 'frontend/assets/images/phone.svg' %}" alt="">
+                    </div>
+                    <div>
+                        Круглосуточный центр поддержки по номеру 1166
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-sm-5 pb-4 ">
+                <div class="social mb-4">
+                    <a href="#" class="footer-link small pb-2">
+                        <img src="{% static 'frontend/assets/images/telegram.svg' %}" alt=""> &nbsp;</a>
+                    <a href="#" class="footer-link small pb-2">
+                        <img src="{% static 'frontend/assets/images/facebook.svg' %}" alt=""> &nbsp;</a>
+                    <a href="#" class="footer-link small pb-2">
+                        <img src="{% static 'frontend/assets/images/instagram.svg' %}" alt=""> &nbsp;</a>
+                </div>
+                <div class="copyright">
+                    Copyright © 2014-2020 New Life Insurance LLC All rights reserved
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- / Footer -->
+
+<!-- Core scripts -->
+<script src="{% static 'frontend/assets/vendor/libs/popper/popper.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/js/bootstrap.js' %}"></script>
+
+<!-- Libs -->
+<script src="{% static 'frontend/assets/vendor/libs/swiper/swiper.js' %}"></script>
+<script src="{% static 'frontend/assets/vendor/libs/plyr/plyr.js' %}"></script>
+
+<!-- Page -->
+<script src="{% static 'frontend/assets/js/blog.js' %}"></script>
+<script src="{% static 'frontend/assets/js/landing.js' %}"></script>
+<script>
+    var swiperMultipleSlides = new Swiper('#swiper-multiple-slides', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        grabCursor: true,
+        navigation: {
+            nextEl: '.swiper-button-next-unique',
+            prevEl: '.swiper-button-prev-unique'
+        }
+    });
+</script>
+</body>
+</html>
