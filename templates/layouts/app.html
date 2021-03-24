@@ -81,7 +81,11 @@
                 <div class="nav-link dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Продукты</a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">123</a>
+                        {% for product in products %}
+                            <a href="#" class="dropdown-item">
+                                {{ product.title }}
+                            </a>
+                        {% endfor %}
                     </div>
                 </div>
                 <a class="anchor-link nav-item nav-link" href="#screenshots">Контакты</a>
