@@ -3,7 +3,7 @@ from .models import *
 from django import forms
 from treasuremap.forms import LatLongField
 from treasuremap.widgets import AdminMapWidget
-from decimal import Decimal
+from modeltranslation.admin import TranslationAdmin
 
 
 # Register your models here.
@@ -22,10 +22,11 @@ class BranchAdminForm(forms.ModelForm):
         if instance:
             self.base_fields['longitude'].initial = str(instance.location).split(";")[0]
             self.base_fields['latitude'].initial = str(instance.location).split(";")[1]
-            forms.ModelForm.__init__(self, *args, **kwargs)
+        forms.ModelForm.__init__(self, *args, **kwargs)
 
 
-class BranchAdmin(admin.ModelAdmin):
+@admin.register(Branch)
+class BranchAdmin(TranslationAdmin):
     list_display = ('title',)
     fields = ('title', 'address',
               'phone_number', 'start_time',
@@ -40,4 +41,4 @@ class BranchAdmin(admin.ModelAdmin):
         obj.save()
 
 
-admin.site.register(Branch, BranchAdmin)
+

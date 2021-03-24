@@ -4,6 +4,10 @@ from django.utils.translation import gettext_lazy as _
 
 class NewsCategory(models.Model):
     title = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.title_uz
+
 # Create your models here.
 class News(models.Model):
     title = models.CharField(max_length=256)

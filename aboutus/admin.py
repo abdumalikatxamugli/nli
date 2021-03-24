@@ -2,36 +2,32 @@ from django.contrib import admin
 from django import forms
 from .models import *
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
-
+from modeltranslation.admin import TranslationAdmin
 # Register your models here.
 
 class HistoryAdminForm(forms.ModelForm):
-    content = forms.CharField(widget=CKEditorUploadingWidget())
+    content_uz = forms.CharField(widget=CKEditorUploadingWidget())
+    content_ru = forms.CharField(widget=CKEditorUploadingWidget())
+    content_en = forms.CharField(widget=CKEditorUploadingWidget())
 
-class HistoryAdmin(admin.ModelAdmin):
+@admin.register(History)
+class HistoryAdmin(TranslationAdmin):
     form = HistoryAdminForm
     list_display = ('years',)
 
 
-admin.site.register(History, HistoryAdmin)
-
-
-class CertificateAdmin(admin.ModelAdmin):
+@admin.register(Certificate)
+class CertificateAdmin(TranslationAdmin):
     list_display = ('title',)
 
 
-admin.site.register(Certificate, CertificateAdmin)
-
-
-class ManagementAdmin(admin.ModelAdmin):
+@admin.register(Management)
+class ManagementAdmin(TranslationAdmin):
     list_display = ('name',)
 
 
-admin.site.register(Management, ManagementAdmin)
-
-
-class FinancialReportsAdmin(admin.ModelAdmin):
+@admin.register(FinancialReport)
+class FinancialReportsAdmin(TranslationAdmin):
     list_display = ('year',)
 
 
-admin.site.register(FinancialReport, FinancialReportsAdmin)

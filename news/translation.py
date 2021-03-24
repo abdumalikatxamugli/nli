@@ -1,10 +1,10 @@
 from modeltranslation.translator import register, TranslationOptions
 from .models import *
 
-@register
+@register(News)
 class NewsTranslationOptions(TranslationOptions):
     fields = ('title', 'short_content', 'content')
 
-@register
+@register(NewsCategory)
 class NewsCategoryTranslationOptions(TranslationOptions):
     fields = ('title',)

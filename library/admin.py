@@ -1,13 +1,15 @@
 from django.contrib import admin
 from .models import *
+from modeltranslation.admin import TranslationAdmin
+
+
 # Register your models here.
 
-class ResourceTypeAdmin(admin.ModelAdmin):
+@admin.register(ResourceType)
+class ResourceTypeAdmin(TranslationAdmin):
     list_display = ('title',)
 
-class ResourceAdmin(admin.ModelAdmin):
+
+@admin.register(Resource)
+class ResourceAdmin(TranslationAdmin):
     list_display = ('title',)
-
-
-admin.site.register(Resource, ResourceAdmin)
-admin.site.register(ResourceType, ResourceTypeAdmin)
