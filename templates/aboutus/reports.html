@@ -1,0 +1,70 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "aboutus/header.html" %}
+    <div class="landing-block">
+        <div class="container  mb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="display-5 text-center">Лицензии и сертификаты</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex">
+                <div>
+                    <img class="arrow-left" src="{% static 'frontend/assets/images/arrow.svg' %}" alt=""
+                         style="cursor: pointer; width:40px" data-drop="1">
+                </div>
+                <div class="ml-3 financial d-flex flex-column justify-content-center flex-grow-1 1">
+                    <div class="" style="width: 100%">2015</div>
+                    <div class="dropped text-justify py-3" id="1">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                        <div class="mt-3">
+                            <img class="mr-2" src="{% static 'frontend/assets/images/pdf.svg' %}" alt="pdf">
+                            <a href="#">Финансовый отчет за 2015 год</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div>
+                    <img class="arrow-left" src="{% static 'frontend/assets/images/arrow.svg' %}" alt=""
+                         style="cursor: pointer; width:40px" data-drop="2">
+                </div>
+                <div class="ml-3 financial d-flex flex-column justify-content-center flex-grow-1 2">
+                    <div class="" style="width: 100%">2016</div>
+                    <div class="dropped text-justify py-3" id="2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                        <div class="mt-3">
+                            <img class="mr-2" src="{% static 'frontend/assets/images/pdf.svg' %}" alt="pdf">
+                            <a href="#">Финансовый отчет за 2016 год</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $('.arrow-left').click(function(e){
+            $(this).toggleClass('open')
+            var drop=e.target.dataset.drop;
+            $('#'+drop).fadeToggle()
+            $('.'+drop).toggleClass('mt-3')
+        })
+    </script>
+{% endblock %}

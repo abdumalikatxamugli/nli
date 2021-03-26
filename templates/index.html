@@ -1,336 +1,296 @@
 {% extends 'layouts/app.html' %}
-{% load static %}
+{% load static helpers %}
 
 {% block content %}
-<!-- Slider -->
-<div class="blog-slider-wrapper">
-    <div class="blog-slider-inner">
-        <div class="swiper-container" id="blog-slider">
-            <div class="swiper-wrapper">
+    <!-- Slider -->
+    <div class="blog-slider-wrapper">
+        <div class="blog-slider-inner">
+            <div class="swiper-container" id="blog-slider">
+                <div class="swiper-wrapper">
 
-                <div class="swiper-slide ui-bg-cover" style="background-image: url({% static 'frontend/assets/images/bg1.jpg' %});">
-                    <div class="blog-slider-overlay"></div>
-                    <div class="blog-slider-slide">
-                        <div class="blog-slider-content">
-                            <div class="text-white mb-2"></div>
-                            <h2 class="blog-slider-caption mb-5">
-                                <a href="#" class="link-animated text-white">Начните новую жизнь с нами!</a>
-                            </h2>
-                            <div class="text-white text-tiny mb-4">
-                                <a href="#" class="btn btn-warning">Узнать больше</a>
+                    <div class="swiper-slide ui-bg-cover"
+                         style="background-image: url({% static 'frontend/assets/images/bg1.jpg' %});">
+                        <div class="blog-slider-overlay"></div>
+                        <div class="blog-slider-slide">
+                            <div class="blog-slider-content">
+                                <div class="text-white mb-2"></div>
+                                <h2 class="blog-slider-caption mb-5">
+                                    <a href="#" class="link-animated text-white">Начните новую жизнь с нами!</a>
+                                </h2>
+                                <div class="text-white text-tiny mb-4">
+                                    <a href="#" class="btn btn-warning">Узнать больше</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide ui-bg-cover"
+                         style="background-image: url({% static 'frontend/assets/images/bg2.jpg' %});">
+                        <div class="blog-slider-overlay"></div>
+                        <div class="blog-slider-slide">
+                            <div class="blog-slider-content">
+                                <div class="text-white mb-2"></div>
+                                <h2 class="blog-slider-caption ">
+                                    <a href="#" class="link-animated text-white">
+                                        Накопительное страхование жизни <br>
+                                    </a>
+                                </h2>
+                                <div class="text-white mb-3">
+                                    Для тех, кто строит свое будущее уже сегодня
+                                </div>
+                                <div class="text-white text-tiny mb-4">
+                                    <a href="#" class="btn btn-warning">Узнать больше</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ui-bg-cover"
+                         style="background-image: url({% static 'frontend/assets/images/call.jpg' %});">
+                        <div class="blog-slider-overlay"></div>
+                        <div class="blog-slider-slide">
+                            <div class="blog-slider-content">
+                                <div class="text-white mb-2"></div>
+                                <h2 class="blog-slider-caption mb-3">
+                                    <a href="#" class="link-animated text-white">
+                                        Горячая линия
+                                    </a>
+                                </h2>
+                                <div class="text-white">
+                                    <ul style="list-style: none;padding:0">
+                                        <li>консультация по вопросам страхования</li>
+                                        <li>координация при наступлении страхового случая</li>
+                                    </ul>
+                                </div>
+                                <div class="text-white text-tiny mb-4">
+                                    <a href="#" class="btn btn-warning">Узнать больше</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination swiper-pagination-white"></div>
+            </div>
+        </div>
+        <div id="blog-slider-prev" class="display-1"><i class="lnr lnr-chevron-left scaleX--1-rtl"></i></div>
+        <div id="blog-slider-next" class="display-1"><i class="lnr lnr-chevron-right scaleX--1-rtl"></i></div>
+    </div>
+    <!-- / Slider -->
 
-                <div class="swiper-slide ui-bg-cover" style="background-image: url({% static 'frontend/assets/images/bg2.jpg'%});">
-                    <div class="blog-slider-overlay"></div>
-                    <div class="blog-slider-slide">
-                        <div class="blog-slider-content">
-                            <div class="text-white mb-2"></div>
-                            <h2 class="blog-slider-caption ">
-                                <a href="#" class="link-animated text-white">
-                                    Накопительное страхование жизни <br>
-                                </a>
-                            </h2>
-                            <div class="text-white mb-3">
-                                Для тех, кто строит свое будущее уже сегодня
-                            </div>
-                            <div class="text-white text-tiny mb-4">
-                                <a href="#" class="btn btn-warning">Узнать больше</a>
-                            </div>
-                        </div>
+    <div class="theme-bg-white">
+        <!-- Block -->
+        <div class="landing-block products">
+            <div class="container relative">
+                <div class="row">
+                    <div class="col-md-12 center text-center pb-5">
+                        <h1>
+                            Рассчитать стоимость и купить онлайн
+                        </h1>
                     </div>
                 </div>
-                <div class="swiper-slide ui-bg-cover" style="background-image: url({% static 'frontend/assets/images/call.jpg'%});">
-                    <div class="blog-slider-overlay"></div>
-                    <div class="blog-slider-slide">
-                        <div class="blog-slider-content">
-                            <div class="text-white mb-2"></div>
-                            <h2 class="blog-slider-caption mb-3">
-                                <a href="#" class="link-animated text-white">
-                                    Горячая линия
-                                </a>
-                            </h2>
-                            <div class="text-white">
-                                <ul style="list-style: none;padding:0">
-                                    <li>консультация по вопросам страхования</li>
-                                    <li>координация при наступлении страхового случая</li>
-                                </ul>
+                <div class="swiper-container swiper-container-initialized swiper-container-horizontal"
+                     id="swiper-multiple-slides">
+                    <div class="swiper-wrapper"
+                         style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                        {% get_product_types as products %}
+                        {% for product in products %}
+                            <div class="swiper-slide swiper-slide-active">
+                                <div class="ui-bordered">
+                                    <a href="#" class="ui-rect-50 d-block ui-rect ui-bg-cover"
+                                       style="background-image: url({{ product.image.url }});"></a>
+                                    <div class="theme-bg-white p-4">
+                                        <!--<div class="text-muted text-tiny mb-2">MAY 21, 2018</div>-->
+                                        <h3 class="font-weight-bold">
+                                            <a href="#" class="text-body">{{ product.title }}</a>
+                                        </h3>
+                                        <div class="text-muted small description">
+                                            {{ product.description }}
+                                        </div>
+                                        {% if product.is_sellable %}
+                                            <a href = "{% url 'sales.form'  product.id %}"
+                                                    type="button"
+                                               class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
+                                                Купить
+                                            </a>
+                                        {% else %}
+                                            <a  href="{% url 'sales.index' product.id %}"
+                                                type="button"
+                                                class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
+                                                    Ознакомиться
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text-white text-tiny mb-4">
-                                <a href="#" class="btn btn-warning">Узнать больше</a>
-                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+                <div class="moved-50">
+
+                    <div class="swiper-button-prev-unique custom-icon" tabindex="0" role="button"
+                         aria-label="Previous slide"
+                         aria-disabled="false">
+                        <i class="lnr lnr-chevron-left "></i>
+                    </div>
+                    <div class="swiper-button-next-unique custom-icon swiper-button-disabled" tabindex="0" role="button"
+                         aria-label="Next slide" aria-disabled="true">
+                        <i class="lnr lnr-chevron-right "></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Block -->
+
+        <div class="landing-separator-stripes my-1"></div>
+
+        <!-- Block -->
+        <div class="landing-block pt-5">
+            <div class="container pb-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="display-4 font-secondary font-weight-semibold text-center">
+                            О Компании
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid px-3 gold pb-5 pt-5">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center ">
+                        <div class="col-lg-5 col-xl-5 mt-5 mt-lg-0">
+                            <img src="{% static 'frontend/assets/images/company.jpg' %}" alt="">
+                        </div>
+                        <div class="col-lg-7 col-xl-7  text-lg-left text-center mx-auto ">
+
+                            <p class=" pl-lg-5 text-22">
+                                Компания «NEW LIFE INSURANCE» является лидером на рынке страховых услуг в отрасли
+                                страхования жизни и здоровья.
+                                Спектр услуг, предоставляемых NLI для клиентов является универсальным как для
+                                физических,
+                                так и для юридических лиц.
+                                Компания придает огромнейшее значение качеству предоставленных услуг и индивидуальному
+                                подходу к
+                                требованиям наших клиентов.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination swiper-pagination-white"></div>
+        </div>
+        <!-- / Block -->
+
+    </div>
+
+    <!-- Block -->
+    <div id="features" class="landing-block">
+        <div class="container px-3">
+
+            <div class="col-md-10 col-lg-8 col-xl-7 text-center p-0 mx-auto">
+                <div class="text-lighter text-tiny font-weight-bold mb-3"></div>
+                <h1 class="display-4 font-secondary font-weight-semibold mb-4">
+                    Почему выбирают Нас
+                </h1>
+                <div class="lead text-muted mb-5">
+
+                </div>
+            </div>
+
+            <hr class="landing-separator border-light mx-auto">
+
+            <div class="row text-center">
+                <div class="col-md-4 mt-5">
+                    <div class="display-4 text-primary mx-auto mb-4">
+                        <img src="{% static 'frontend/assets/images/icon1.svg' %}" alt="">
+                    </div>
+                    <h5>Крупнейший страховщик в отрасли страхования жизни в Узбекистане</h5>
+                    <div class="text-muted small">
+                        Hомер 1 по сбору страховых премий страховщиков рынка
+                        страхования жизни на протяжении 3 лет
+                        <br><br>
+                        Входим в пятерку страховщиков
+                        по сбору страховой премии всего
+                        рынка страхования Узбекистана
+                        по итогам 2019 года
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <div class="display-4 text-primary mx-auto mb-4">
+                        <img src="{% static 'frontend/assets/images/icon2.svg' %}" alt="">
+                    </div>
+                    <h5>Высокий уровень сервиса</h5>
+                    <div class="text-muted small">
+                        Прямой звонок из любой точки
+                        Узбекистана по короткому
+                        номеру 1166
+                        <br><br>
+                        Прямой контакт с оператором
+                        (без ожидания в очереди и
+                        монолога автоответчика)
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <div class="display-4 text-primary mx-auto mb-4">
+                        <img src="{% static 'frontend/assets/images/icon3.svg' %}" alt="">
+                    </div>
+                    <h5>Высокий уровень сервиса</h5>
+                    <div class="text-muted small">
+                        Выплата страховых возмещений
+                        в кратчайшие сроки
+                        <br><br>
+                        Hомер 1 по объемы выплат
+                        в области страхования жизни
+                        в 2019 году
+                        <br><br>
+                        Самая большая сеть партнерских
+                        клиник (300) и аптек (200) по всей
+                        Республике
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
-    <div id="blog-slider-prev" class="display-1"><i class="lnr lnr-chevron-left scaleX--1-rtl"></i></div>
-    <div id="blog-slider-next" class="display-1"><i class="lnr lnr-chevron-right scaleX--1-rtl"></i></div>
-</div>
-<!-- / Slider -->
+    <!-- / Block -->
 
-<div class="theme-bg-white">
     <!-- Block -->
-    <div class="landing-block products">
-        <div class="container relative">
+    <div class="landing-block news">
+        <div class="container ">
             <div class="row">
                 <div class="col-md-12 center text-center pb-5">
                     <h1>
-                        Рассчитать стоимость и купить онлайн
+                        Новости компании
                     </h1>
                 </div>
             </div>
-            <div class="swiper-container swiper-container-initialized swiper-container-horizontal"
-                 id="swiper-multiple-slides">
-                <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
-                    <div class="swiper-slide swiper-slide-active">
-                        <div class="ui-bordered">
-                            <a href="#" class="ui-rect-50 d-block ui-rect ui-bg-cover"
-                               style="background-image: url({% static 'frontend/assets/images/avto.jpg'%});"></a>
-                            <div class="theme-bg-white p-4">
-                                <!--<div class="text-muted text-tiny mb-2">MAY 21, 2018</div>-->
-                                <h3 class="font-weight-bold">
-                                    <a href="#" class="text-body">Страхование на случай ДТП </a>
-                                </h3>
-                                <div class="text-muted small description">
-                                    Медицинская помощь в случае дорожно-транспортного происшествия
-                                </div>
-                                <button type="button"
-                                        class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
-                                    Купить
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-active">
-                        <div class="ui-bordered">
-                            <a href="#" class="ui-rect-50 d-block ui-rect ui-bg-cover"
-                               style="background-image: url({% static 'frontend/assets/images/covid.png'%});"></a>
-                            <div class="theme-bg-white p-4">
-                                <!--<div class="text-muted text-tiny mb-2">MAY 21, 2018</div>-->
-                                <h3 class="font-weight-bold">
-                                    <a href="#" class="text-body">Страхование COVID-19 </a>
-                                </h3>
-                                <div class="text-muted small description">
-                                    Максимальная защита в момент пандемии
-                                </div>
-                                <button type="button"
-                                        class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
-                                    Купить
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-active">
-                        <div class="ui-bordered">
-                            <a href="#" class="ui-rect-50 d-block ui-rect ui-bg-cover"
-                               style="background-image: url({% static 'frontend/assets/images/dms.jpg'%});"></a>
-                            <div class="theme-bg-white p-4">
-                                <!--<div class="text-muted text-tiny mb-2">MAY 21, 2018</div>-->
-                                <h3 class="font-weight-bold">
-                                    <a href="#" class="text-body">Медицинское страхование </a>
-                                </h3>
-                                <div class="text-muted small description">
-                                    Квалифицированная медицинская помощь для Вас и Ваших близких
-                                </div>
-                                <button type="button"
-                                        class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
-                                    Купить
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-active">
-                        <div class="ui-bordered">
-                            <a href="#" class="ui-rect-50 d-block ui-rect ui-bg-cover"
-                               style="background-image: url({% static 'frontend/assets/img/bg/1.jpg'%});"></a>
-                            <div class="theme-bg-white p-4">
-                                <!--<div class="text-muted text-tiny mb-2">MAY 21, 2018</div>-->
-                                <h3 class="font-weight-bold">
-                                    <a href="#" class="text-body">Страхование на случай ДТП </a>
-                                </h3>
-                                <div class="text-muted small description">
-                                    Медицинская помощь в случае дорожно-транспортного происшествия
-                                </div>
-                                <button type="button"
-                                        class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
-                                    Купить
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-            </div>
-            <div class="moved-50">
-
-                <div class="swiper-button-prev-unique custom-icon" tabindex="0" role="button"
-                     aria-label="Previous slide"
-                     aria-disabled="false">
-                    <i class="lnr lnr-chevron-left "></i>
-                </div>
-                <div class="swiper-button-next-unique custom-icon swiper-button-disabled" tabindex="0" role="button"
-                     aria-label="Next slide" aria-disabled="true">
-                    <i class="lnr lnr-chevron-right "></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- / Block -->
-
-    <div class="landing-separator-stripes my-1"></div>
-
-    <!-- Block -->
-    <div class="landing-block pt-5">
-        <div class="container pb-5">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="display-4 font-secondary font-weight-semibold text-center">
-                        О Компании
-                    </h1>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid px-3 gold pb-5 pt-5">
-            <div class="container">
-                <div class="row justify-content-between align-items-center ">
-                    <div class="col-lg-5 col-xl-5 mt-5 mt-lg-0">
-                        <img src="{% static 'frontend/assets/images/company.jpg'%}" alt="">
-                    </div>
-                    <div class="col-lg-7 col-xl-7  text-lg-left text-center mx-auto ">
-
-                        <p class=" pl-lg-5 text-22">
-                            Компания «NEW LIFE INSURANCE» является лидером на рынке страховых услуг в отрасли
-                            страхования жизни и здоровья.
-                            Спектр услуг, предоставляемых NLI для клиентов является универсальным как для физических,
-                            так и для юридических лиц.
-                            Компания придает огромнейшее значение качеству предоставленных услуг и индивидуальному
-                            подходу к
-                            требованиям наших клиентов.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- / Block -->
-
-</div>
-
-<!-- Block -->
-<div id="features" class="landing-block">
-    <div class="container px-3">
-
-        <div class="col-md-10 col-lg-8 col-xl-7 text-center p-0 mx-auto">
-            <div class="text-lighter text-tiny font-weight-bold mb-3"></div>
-            <h1 class="display-4 font-secondary font-weight-semibold mb-4">
-                Почему выбирают Нас
-            </h1>
-            <div class="lead text-muted mb-5">
-
-            </div>
-        </div>
-
-        <hr class="landing-separator border-light mx-auto">
-
-        <div class="row text-center">
-            <div class="col-md-4 mt-5">
-                <div class="display-4 text-primary mx-auto mb-4">
-                    <img src="{% static 'frontend/assets/images/icon1.svg'%}" alt="">
-                </div>
-                <h5>Крупнейший страховщик в отрасли страхования жизни в Узбекистане</h5>
-                <div class="text-muted small">
-                    Hомер 1 по сбору страховых премий страховщиков рынка
-                    страхования жизни на протяжении 3 лет
-                    <br><br>
-                    Входим в пятерку страховщиков
-                    по сбору страховой премии всего
-                    рынка страхования Узбекистана
-                    по итогам 2019 года
-                </div>
-            </div>
-            <div class="col-md-4 mt-5">
-                <div class="display-4 text-primary mx-auto mb-4">
-                    <img src="{% static 'frontend/assets/images/icon2.svg'%}" alt="">
-                </div>
-                <h5>Высокий уровень сервиса</h5>
-                <div class="text-muted small">
-                    Прямой звонок из любой точки
-                    Узбекистана по короткому
-                    номеру 1166
-                    <br><br>
-                    Прямой контакт с оператором
-                    (без ожидания в очереди и
-                    монолога автоответчика)
-                </div>
-            </div>
-            <div class="col-md-4 mt-5">
-                <div class="display-4 text-primary mx-auto mb-4">
-                    <img src="{% static 'frontend/assets/images/icon3.svg'%}" alt="">
-                </div>
-                <h5>Высокий уровень сервиса</h5>
-                <div class="text-muted small">
-                    Выплата страховых возмещений
-                    в кратчайшие сроки
-                    <br><br>
-                    Hомер 1 по объемы выплат
-                    в области страхования жизни
-                    в 2019 году
-                    <br><br>
-                    Самая большая сеть партнерских
-                    клиник (300) и аптек (200) по всей
-                    Республике
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-<!-- / Block -->
-
-<!-- Block -->
-<div class="landing-block news">
-    <div class="container ">
-        <div class="row">
-            <div class="col-md-12 center text-center pb-5">
-                <h1>
-                    Новости компании
-                </h1>
-            </div>
-        </div>
-        <div class="row">
-            {% for n in news %}
-            <div class="col-md-4 mb-5 pb-5 mb-lg-5">
-                <div class="ui-bordered">
-                    <a href="#" class="ui-rect-50 d-block ui-rect ui-bg-cover"
-                       style="background-image: url({% static 'frontend/assets/img/bg/1.jpg'%});"></a>
-                    <div class="theme-bg-white p-4">
-                        <!--<div class="text-muted text-tiny mb-2">MAY 21, 2018</div>-->
-                        <h3 class="font-weight-bold">
-                            <a href="#" class="text-body">
-                               {{ n.title }}
-                            </a>
-                        </h3>
-                        <div class="text-muted small">
-                            {{ n.short_content }}
+                {% for n in news %}
+                    <div class="col-md-4 mb-5 pb-5 mb-lg-5">
+                        <div class="ui-bordered">
+                            <a href="#" class="ui-rect-50 d-block ui-rect ui-bg-cover"
+                               style="background-image: url({% static 'frontend/assets/img/bg/1.jpg' %});"></a>
+                            <div class="theme-bg-white p-4">
+                                <!--<div class="text-muted text-tiny mb-2">MAY 21, 2018</div>-->
+                                <h3 class="font-weight-bold">
+                                    <a href="#" class="text-body">
+                                        {{ n.title }}
+                                    </a>
+                                </h3>
+                                <div class="text-muted small">
+                                    {{ n.short_content }}
+                                </div>
+                                <button type="button"
+                                        class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
+                                    Узнать больше
+                                </button>
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-warning btn-sm rounded-5 font-weight-semibold mt-4">
-                            Узнать больше
-                        </button>
                     </div>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
 
+        </div>
     </div>
-</div>
 
 {% endblock %}

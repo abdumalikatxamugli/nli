@@ -30,7 +30,8 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('sales/', include('sales.urls')),
     path('i18n', include('django.conf.urls.i18n')),
-    path('', index)
+    path('', index, name="home"),
+    path('about/', include('aboutus.urls'))
 )
 
 

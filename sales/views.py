@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login as dj_auth, logout as dj_logout
+from .models import *
 
 
 # Create your views here.
@@ -28,6 +29,20 @@ def login(request):
 
         return redirect('sales.login')
 
+
 def logout(request):
     dj_logout(request)
     return redirect('sales.login')
+
+
+def get_product(request, id):
+    product = Product.objects.get(pk=id)
+    context = {
+        'product': product
+    }
+    return render(request, 'sales/index.html', context)
+
+
+def get_product_form(request, product_id):
+    product = Product.objects.get(pk = product_id)
+    return render(request, 'sales/forms/' + str(product.selling_form))

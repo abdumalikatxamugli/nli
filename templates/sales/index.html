@@ -1,0 +1,46 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+    {% include 'sales/header.html' %}
+    <div class="py-3 bg-gold">
+        <div class="container">
+            <div class="d-flex text-black">
+                {% for page in product.productpages_set.all %}
+                    <div class="mr-4 drop-trigger {% if forloop.counter0 == 0 %} active {% endif %}"
+                         data-id="{{ page.id }}">
+                        {{ page.title }}
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="content mt-5">
+        <div class="container">
+            {% for page in product.productpages_set.all %}
+                <div id="{{ page.id }}" class="drop">
+                    {% autoescape off %}.
+                        {{ page.content }}
+                    {% endautoescape %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if product.is_sellable %}
+        <div class="container text-center mt-5">
+            <a class="btn btn-lg btn-warning px-5" href="{% url 'sales.form' product_id=product.id %}">Оформить
+                онлайн</a>
+        </div>
+    {% endif %}
+    <script>
+        $('.drop').hide();
+        $('#1').show();
+        $('.drop-trigger').click(function (e) {
+            $('.drop-trigger').removeClass('active');
+            $(this).addClass('active');
+            let id = e.target.dataset.id;
+            $('.drop').hide();
+            $('#' + id).fadeIn();
+        })
+    </script>
+{% endblock %}

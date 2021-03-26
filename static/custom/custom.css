@@ -1,0 +1,133 @@
+.content-wrapper{
+    margin-top: 100px;
+}
+.image-effect{
+    display: block;
+    width: calc(100% - 25px);
+    position: relative;
+}
+.image-effect-wrapper{
+    position: relative;
+    width: calc(100% - 25px);
+    margin-left: 25px;
+}
+.image-effect-wrapper:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: calc(100% - 25px);
+    left: -25px;
+    height: 100%;
+    border: 1px solid #fabb1b;
+    top: -25px;
+    z-index: 1;
+}
+.image-effect-wrapper:after{
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: calc(100% - 25px);
+    height: 100%;
+    left: 25px;
+    border: 1px dashed #bfb498;
+    top: 25px;
+    z-index: 1;
+}
+
+.text-effect{
+    transform: rotate(270deg);
+    position: absolute;
+    width: 120px;
+    font-size: 20px;
+    color: #f9c33e;
+    text-align: center;
+    background-color:white
+}
+.reverse .text-effect{
+     transform: rotate(90deg);
+}
+.text-effect-wrapper:before{
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    border-right: 3px dashed gold;
+}
+.text-effect-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.management-block{
+    position: relative;
+}
+.management-block .top-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:60px;
+    height: 60px;
+    border-top: 2px dashed gold;
+    border-left: 2px dashed gold;
+}
+.management-block .top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:60px;
+    height: 60px;
+    border-top: 2px dashed gold;
+    border-right: 2px dashed gold;
+}
+.management-block .bottom-left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:60px;
+    height: 60px;
+    border-bottom: 2px dashed gold;
+    border-left: 2px dashed gold;
+}
+.management-block .bottom-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width:60px;
+    height: 60px;
+    border-bottom: 2px dashed gold;
+    border-right: 2px dashed gold;
+}
+.bordered{
+    border: 1px dotted silver;
+}
+.financial{
+    border-bottom:1px solid gold;
+}
+.financial>span{
+    font-size: 18px;
+}
+.financial .dropped{
+    font-size: 15px;
+    display: none;
+}
+.open{
+    transform: rotate(87deg);
+    transition: .4s;
+}
+.arrow-left{
+    transition:.4s;
+}
+.dropped img{
+    width:30px;
+}
+.bg-gold{
+    background-color:#fbda4f;
+}
+.drop-trigger{
+    cursor: pointer;
+}
+.drop-trigger.active{
+    border-bottom: 1px dashed #4e5153;
+}

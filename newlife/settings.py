@@ -79,6 +79,7 @@ TEMPLATES = [
     },
 ]
 
+
 TREASURE_MAP = {
     'BACKEND': 'treasuremap.backends.yandex.YandexMapBackend',
     'API_KEY': 'cc11b76a-ff2c-4bd0-a338-8aef4d3d65b9',
