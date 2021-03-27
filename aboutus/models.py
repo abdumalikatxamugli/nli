@@ -11,7 +11,7 @@ class History(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name_plural = "Company History"
+        verbose_name_plural = "История Компании"
 
 
 class Certificate(models.Model):
@@ -22,7 +22,7 @@ class Certificate(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name_plural = "Certificates"
+        verbose_name_plural = "Лицензии и сертификаты"
 
 
 class Management(models.Model):
@@ -33,14 +33,15 @@ class Management(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name_plural = "Management"
+        verbose_name_plural = "Руководство"
+
 
 class FinancialReport(models.Model):
     year = models.CharField(max_length=4)
     file = models.FileField(upload_to='financial_reports', null=True)
-
+    content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name_plural = "Financial Reports"
+        verbose_name_plural = "Финансовая отчетность"

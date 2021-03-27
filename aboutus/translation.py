@@ -15,5 +15,5 @@ class ManagementTranslationOptions(TranslationOptions):
 
 @register(FinancialReport)
 class FinancialReportTranslationOptions(TranslationOptions):
-    pass
+    fields = ('content', )
 

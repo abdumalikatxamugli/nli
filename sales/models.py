@@ -13,6 +13,9 @@ class Product(models.Model):
     def __str__(self):
         return self.title_uz
 
+    class Meta:
+        verbose_name_plural = 'Продукты'
+
 
 class ProductPages(models.Model):
     title = models.CharField(max_length=256)

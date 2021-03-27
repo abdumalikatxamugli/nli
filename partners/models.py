@@ -8,9 +8,15 @@ class PartnerTypes(models.Model):
     def __str__(self):
         return self.title_uz
 
+    class Meta:
+        verbose_name_plural = 'Типы партнеров'
+
 
 class Partners(models.Model):
     title = models.CharField(max_length=256)
     content = models.TextField()
     image = models.ImageField(upload_to='partners')
     partner_type = models.ForeignKey(PartnerTypes, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Партнеры'

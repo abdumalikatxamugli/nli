@@ -9,3 +9,6 @@ class Branch(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     location = LatLongField(blank = True)
+
+    class Meta:
+        verbose_name_plural = 'Филиалы'

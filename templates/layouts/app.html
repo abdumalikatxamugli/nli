@@ -154,7 +154,7 @@
     <div class="container  py-4">
         <hr class="mb-5" style="border-color: #d5d6c7;">
         <div class="row">
-            <div class="col-6 col-sm-4 pb-4">
+            <div class="col-12 col-sm-4 pb-4">
                 <div class="d-flex">
                     <div class="mr-2">
                         <img src="{% static 'frontend/assets/images/location.svg' %}" alt="">
@@ -166,7 +166,7 @@
                 </div>
 
             </div>
-            <div class="col-6 col-sm-3 pb-4">
+            <div class="col-12 col-sm-3 pb-4">
                 <div class="d-flex mb-3">
                     <div class="mr-2">
                         <img src="{% static 'frontend/assets/images/mail.svg' %}" alt="">
@@ -185,7 +185,7 @@
                 </div>
 
             </div>
-            <div class="col-6 col-sm-5 pb-4 ">
+            <div class="col-12 col-sm-5 pb-4 ">
                 <div class="social mb-4">
                     <a href="#" class="footer-link small pb-2">
                         <img src="{% static 'frontend/assets/images/telegram.svg' %}" alt=""> &nbsp;</a>
@@ -216,12 +216,22 @@
 <script src="{% static 'frontend/assets/js/landing.js' %}"></script>
 <script>
     var swiperMultipleSlides = new Swiper('#swiper-multiple-slides', {
-        slidesPerView: 3,
         spaceBetween: 30,
         grabCursor: true,
         navigation: {
             nextEl: '.swiper-button-next-unique',
             prevEl: '.swiper-button-prev-unique'
+        },
+        breakpoints: {
+            500: {
+              slidesPerView: 1
+            },
+            700: {
+              slidesPerView: 1.5
+            },
+            900:{
+                slidesPerView: 3
+            }
         }
     });
 </script>

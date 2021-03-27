@@ -8,8 +8,8 @@ from modeltranslation.admin import TranslationAdmin
 
 # Register your models here.
 class BranchAdminForm(forms.ModelForm):
-    longitude = forms.DecimalField()
-    latitude = forms.DecimalField()
+    longitude = forms.DecimalField(required=False)
+    latitude = forms.DecimalField(required=False)
     location_type = forms.ChoiceField(choices=[
         ('Map', 'Map'),
         ('Coordinates', 'Coordinates'),

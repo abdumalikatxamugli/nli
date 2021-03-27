@@ -131,3 +131,11 @@
 .drop-trigger.active{
     border-bottom: 1px dashed #4e5153;
 }
+@media(max-width: 900px){
+   .moved-50{
+        display: none;
+    }
+    .lang-choose{
+        margin-bottom: 25px;
+    }
+}

@@ -22,6 +22,9 @@ from django.conf.urls.i18n import i18n_patterns
 from django.urls import include
 from .views import index
 
+admin.site.site_header = 'Панель администратора'
+admin.site.index_title = 'New Life Insurance'
+
 urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls'))
 ]
@@ -31,7 +34,8 @@ urlpatterns += i18n_patterns(
     path('sales/', include('sales.urls')),
     path('i18n', include('django.conf.urls.i18n')),
     path('', index, name="home"),
-    path('about/', include('aboutus.urls'))
+    path('about/', include('aboutus.urls')),
+    path('news/', include('news.urls'))
 )
 
 

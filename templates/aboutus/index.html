@@ -83,67 +83,34 @@
         </div>
     </div>
     <div class="container history landing-block pt-5">
-        <div class="row mb-5 pb-5">
-            <div class="col-md-6 align-items-center">
-                <div class="row">
-                    <div class="col-md-1 text-effect-wrapper">
-                        <div class="text-effect">2014 - 2016</div>
-                    </div>
-                    <div class="col-md-11">
-                        <p class="text-justify pr-4">
-                            19 мая 2014 год - основание компании, получение лицензии Министерства финансов Республики
-                            Узбекистан
-                            на осуществление страховой деятельности.
-                            2016 год - приобретение ООО GROSS INSURANCE 100%
-                            доли в уставном фонде ООО «TEMIRYO’L LIFE».
-                            Проведение ребрендинга.
-                            С 5 августа 2016 года ООО «TEMIRYO’L LIFE»
-                            переименована в ООО СК «NEW LIFE INSURANCE».
-                            12-ая позиция в рэнкинге страховщиков Узбекистана
-                            по сбору страховой премии, согласно данным www.mf.uz. Увеличение уставного фонда до 25 млрд.
-                        </p>
+        {% for h in history %}
+            <div class="row mb-5 pb-5 {% if forloop.counter|divisibleby:2 %} reverse {% endif %}" >
+                <div class="col-md-6 align-items-center {% if forloop.counter|divisibleby:2 %} order-2 {% endif %}">
+                    <div class="row">
+                        <div class="col-md-1 text-effect-wrapper {% if forloop.counter|divisibleby:2 %} order-2 {% endif %}">
+                            <div class="text-effect">{{ h.years }}</div>
+                        </div>
+                        <div class="col-md-11 {% if forloop.counter|divisibleby:2 %} order-1 {% endif %}">
+                            <p class="text-justify pr-4">
+                                {% autoescape off %}
+                                    {{ h.content }}
+                                {% endautoescape %}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="image-effect-wrapper">
-                    <img class="image-effect" src="{% static 'frontend/assets/images/1.jpg' %}" alt="image">
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5 pt-5 reverse">
-            <div class="col-md-6">
-                <div class="image-effect-wrapper">
-                    <img class="image-effect" src="{% static 'frontend/assets/images/1.jpg' %}" alt="image">
-                </div>
-            </div>
-            <div class="col-md-6 align-items-center">
-                <div class="row">
-                    <div class="col-md-11">
-                        <p class="text-justify pr-4">
-                            19 мая 2014 год - основание компании, получение лицензии Министерства финансов Республики
-                            Узбекистан
-                            на осуществление страховой деятельности.
-                            2016 год - приобретение ООО GROSS INSURANCE 100%
-                            доли в уставном фонде ООО «TEMIRYO’L LIFE».
-                            Проведение ребрендинга.
-                            С 5 августа 2016 года ООО «TEMIRYO’L LIFE»
-                            переименована в ООО СК «NEW LIFE INSURANCE».
-                            12-ая позиция в рэнкинге страховщиков Узбекистана
-                            по сбору страховой премии, согласно данным www.mf.uz. Увеличение уставного фонда до 25 млрд.
-                        </p>
-                    </div>
-                    <div class="col-md-1 text-effect-wrapper">
-                        <div class="text-effect">2014 - 2016</div>
+                <div class="col-md-6 {% if forloop.counter|divisibleby:2 %} order-1 {% endif %}">
+                    <div class="image-effect-wrapper">
+                        <img class="image-effect" src="{% static 'frontend/assets/images/1.jpg' %}" alt="image">
                     </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
 
 
     <section class="landing-block ">
-         <div class="container  mb-5">
+        <div class="container  mb-5">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="display-5 text-center">Круглосуточная поддержка</h1>
@@ -173,7 +140,7 @@
 
 
     <section class="landing-block ">
-     <div class="container  mb-5">
+        <div class="container  mb-5">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="display-5 text-center">Профессиональная медицинская группа</h1>
@@ -183,7 +150,8 @@
         <div class="container px-3">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6 col-xl-6 mt-5 mt-lg-0 py-5 px-5">
-                    <img src="{% static 'frontend/assets/images/med.jpg' %}" alt="" style="max-width: 100%; -webkit-transform: scaleX(-1); transform: scaleX(-1);">
+                    <img src="{% static 'frontend/assets/images/med.jpg' %}" alt=""
+                         style="max-width: 100%; -webkit-transform: scaleX(-1); transform: scaleX(-1);">
                 </div>
                 <div class="col-lg-6 col-xl-6 mx-auto">
                     <p class="text-muted text-justify">

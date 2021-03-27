@@ -1,0 +1,18 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+    {% include 'news/header.html' with news=news %}
+    <style>
+        .news-content img{
+            max-width: 100%;
+            height: auto !important;
+        }
+    </style>
+    <div class="container  news-content">
+        {% autoescape off %}
+            <p class="mt-5 text-justify ">
+                {{ news.content }}
+            </p>
+        {% endautoescape %}
+    </div>
+{% endblock %}
